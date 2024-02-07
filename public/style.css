@@ -8,6 +8,10 @@ img{
     align-items: center;
     justify-content: center;
 }
+.container img {
+    width:  200px;
+    height: 200px;
+}
 .describe{
     display: flex;
     width: 500px;
