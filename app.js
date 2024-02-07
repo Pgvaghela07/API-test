@@ -7,7 +7,7 @@ app.use(express.static(path.join(__dirname, "public")));
 
 app.get("/", (req, res) => {
     const instagram = require("./data.json");
-    const data = instagram["dogs"];
+    const data = instagram["cats"];
         res.render("index", { data });
 
 });
