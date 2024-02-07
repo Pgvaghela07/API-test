@@ -1,0 +1,59 @@
+<%- include("../views/partials/head") %>
+<style>
+    img{
+    width: 500px;
+    height: 500px;
+    transition:  all .3s ease-in-out;
+}
+.container{
+    display: flex;
+    /* flex-direction: column; */
+    align-items: center;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+.imagesection{
+    display: flex;
+    flex-direction: column;
+    margin: 15px;
+    box-shadow: 0px 0px 5px 10px rgba(4, 4, 4, 0.3);
+    transition:  all .3s ease-in-out;
+    overflow: hidden;
+}
+.imagesection img:hover{
+    transform: scale(1.02);
+}
+.describe{
+    display: flex;
+
+    width: 100%;
+    justify-content:space-between;
+    
+}
+.describe p{
+    margin: 10px;
+    cursor: pointer;
+}
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+integrity="sha512-iecdLmaskl7CVkqkXNQ/ZH/XLlvWZOJyj7Yy7tcenmpD1ypASozpmT/E0iPtmFIB46ZmdtAc9eNBvH0H/ZpiBw=="
+crossorigin="anonymous" referrerpolicy="no-referrer" />
+<body>
+    <h2>This is a @<%= data.name %> profile</h2>
+    <div class="container">
+        <% for (let post of data.posts) { %>
+            <div class="imagesection">
+                <img src="<%= post.image %>" alt="images">
+                <div class="describe">
+                    <p><i class="fa-regular fa-heart"></i>
+                        Likes:<%= post.likes %></p>
+                    <p><i class="fa-regular fa-comment"></i> 
+                        Comments:<%= post.comments %></p>
+                </div>
+            </div>
+                <hr>
+            <% } %>
+    </div>             
+</body>
+</html>
+
